@@ -340,7 +340,7 @@ print("Cleaned Orders Data:")
 print(cleaned_orders_data_df)
 
 # Uploads Final cleaned orders data to the database
-db_connector.upload_to_db(file_path_upload, final_cleaned_df, 'orders_table')
+db_connector.upload_to_db(file_path_upload, cleaned_orders_data_df, 'orders_table')
 
 # Extracts data from the JSON file on S3
 s3_date_details_address = 's3://data-handling-public/date_details.json'
