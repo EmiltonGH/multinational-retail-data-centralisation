@@ -41,7 +41,6 @@ class DatabaseConnector:
     # This method will upload the table to the database
     def upload_to_db(self, file_path, df, table_name):
         engine = self.init_db_engine(file_path)
-        
         # Convert DataFrame to SQL table
         df.to_sql(table_name, engine, if_exists='replace', index= False)
         print(f"Data uploaded successfully to the table '{table_name}' in the database.")
@@ -248,7 +247,7 @@ class DataCleaning:
         cleaned_df['time_period'] = cleaned_df['time_period'].str.upper()
 
         # Drops 'date_uuid' column if not needed for further analysis
-        cleaned_df = cleaned_df.drop(columns=['date_uuid'])
+        #cleaned_df = cleaned_df.drop(columns=['date_uuid'])
 
         return cleaned_df
 
