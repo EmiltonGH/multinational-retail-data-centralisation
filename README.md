@@ -63,5 +63,74 @@ multinational-retail-data-centralisation/
 |-- MRDC_Project.py
 |-- README.md
 
+## Database Schema
+I have developed star-based schema of the database sales_data,ensuring that the each and every columns are of the correct data types.
+
+# Tables
+- Table Name : orders_table
+- Description : This table acts as the single source of truth for all orders,the company has made in the past is stored in a database on AWS RDS.
+- Columns :
+   - date_uuid (UUID)
+   - user_uuid (UUID)
+   - card_number (VARCHAR(30))
+   - store_code (VARCHAR(20))
+   - product_code (VARCHAR(20)
+   - product_quantity (SMALLINT)
+
+- Table Name : dim_users
+- Description : The history of all the users data is currently stored in an AWS database in the cloud.
+- Columns :
+   - first_name (VARCHAR(255))
+   - last_name (VARCHAR(255))
+   - date_of_birth (DATE)
+   - country_code (VARCHAR(20))
+   - user_uuid (UUID)
+   - join_date (DATE)
+ 
+- Table Name : dim_store_details
+- Description : All the stores details have been retrived through the use of an API.
+- Columns :
+   - longitude (FLOAT)
+   - locality (VARCHAR(255))
+   - store_code ( VARCHAR(20))
+   - staff_numbers ( SMALLINT)
+   - opening_date (DATE)
+   - store_type (VARCHAR(255))
+   - latitude ( FLOAT)
+   - country_code (VARCHAR(20))
+   - continent (VARCHAR(255))
+
+- Table Name : dim_products
+- Description : The information for each product, the company currently sells is stored in CSV format in an S3 bucket on AWS. In this table we have created human_readble column weight_class for the weight based on the particular weight range, so they can quickly make decisions on delivery weights.
+- Columns :
+   - product_price (FLOAT)
+   - weight (FLOAT)
+   - EAN (VARCHAR(30))
+   - product_code (VARCHAR(20))
+   - date_added (DATE)
+   - uuid ( UUID)
+   - still_available (BOOL)
+   - weight_class (VARCHAR(50))
+ 
+- Table Name : dim_date_times
+- Description : This table containing the details of when each sale happened, as well as related attributes. This file has been stored on an AWS S3 bucket.
+- Columns :
+   - month (VARCHAR(30))
+   - year ( VARCHAR(30))
+   - day ( VARCHAR(30))
+   - time_period (VARCHAR(50))
+   - date_uuid (UUID)
+
+- Table Name : dim_card_details
+- Description : The users card details are stored in a PDF document in an AWS S3 bucket
+- Columns :
+   - card_number (VARCHAR(30))
+   - expiry_date ( VARCHAR(20))
+   - date_payment_confirmed ( DATE)
+
+We have created primary keys for all the dimension tables and added foreign keys to the orders table.
+According to each task,created SQLs are in Database_Schema_SQLs folder.We used pgAdmin which is a popular open-source graphical user interface (GUI) administration and management tool for PostgreSQL.
+
+
 
 
