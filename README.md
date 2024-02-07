@@ -5,7 +5,7 @@
 - Installation
 - Usage
 - File Structure
-- License
+- Databse Schema
 
 ## Description
 You work for a multinational company that sells various goods across the globe.
