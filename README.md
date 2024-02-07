@@ -6,6 +6,7 @@
 - Usage
 - File Structure
 - Databse Schema
+- Querying the Data
 
 ## Description
 You work for a multinational company that sells various goods across the globe.
@@ -131,6 +132,9 @@ I have developed star-based schema of the database sales_data,ensuring that the 
 We have created primary keys for all the dimension tables and added foreign keys to the orders table.
 According to each task,created SQLs are in Database_Schema_SQLs folder.We used pgAdmin which is a popular open-source graphical user interface (GUI) administration and management tool for PostgreSQL.
 
-
+## Querying the Data
+Now we have the schema for the database sales_data and all the sales data is in one location.The company would like to get some up-to-date metrics from the data.The business can then start making more data-driven decisions and get a better understanding of its sales.
+We have used SQL to get the exact answers for each queries company asks.
+All the SQLs are in the Querying the data folder.
 
 
