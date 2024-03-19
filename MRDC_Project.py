@@ -342,7 +342,7 @@ print(cleaned_orders_data_df)
 db_connector.upload_to_db(file_path_upload, cleaned_orders_data_df, 'orders_table')
 
 # Extracts data from the JSON file on S3
-s3_date_details_address = 's3://data-handling-public/date_details.json'
+s3_date_details_address = 'https://data-handling-public.s3.eu-west-1.amazonaws.com/date_details.json'
 date_details_df = db_extractor.extract_from_s3(s3_date_details_address,file_format='json')
 
 # Displays the extracted DataFrame
